@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://viesw8m25fn3"]
+
+[ext_resource type="Texture2D" uid="uid://bpuhwme3to83m" path="res://enemyShip.png" id="1_ubfh8"]
+[ext_resource type="Script" uid="uid://dutdhft78gjuw" path="res://movementPlayer.gd" id="2_444vf"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(228, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ubfh8")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+slide_on_ceiling = false
+script = ExtResource("2_444vf")
