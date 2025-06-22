@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://viesw8m25fn3"]
+[gd_scene load_steps=8 format=3 uid="uid://viesw8m25fn3"]
 
 [ext_resource type="Script" uid="uid://brwxpxd7hyv7r" path="res://movementPlayer.gd" id="1_27ga2"]
 [ext_resource type="Texture2D" uid="uid://bpuhwme3to83m" path="res://enemyShip.png" id="1_ubfh8"]
 [ext_resource type="Texture2D" uid="uid://ch8a0ov3gnrm5" path="res://playerShip.png" id="3_27ga2"]
 [ext_resource type="Script" uid="uid://dynujn402iieh" path="res://playerComputer.gd" id="3_h0wof"]
 [ext_resource type="Texture2D" uid="uid://ciic4ofgo3ld" path="res://swarmLeader.png" id="5_fu4bq"]
+[ext_resource type="Script" uid="uid://ckff5glppxfma" path="res://swarmShip.gd" id="6_yokb4"]
+[ext_resource type="Texture2D" uid="uid://yghtu2flhcxd" path="res://swarmShip.png" id="7_pbtuc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,6 +14,7 @@
 position = Vector2(222, 220)
 slide_on_ceiling = false
 script = ExtResource("1_27ga2")
+metadata/affiliation = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 rotation = 1.5708
@@ -21,13 +24,94 @@ texture = ExtResource("1_ubfh8")
 position = Vector2(472, 220)
 slide_on_ceiling = false
 script = ExtResource("3_h0wof")
+metadata/affiliation = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="otherguy"]
 rotation = 1.5708
 texture = ExtResource("3_27ga2")
 
 [node name="swarm1" type="CharacterBody2D" parent="."]
-position = Vector2(444, 424)
+position = Vector2(410, 449)
+rotation = 1.09607
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+metadata/affiliation = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="swarm1"]
+rotation = 1.5708
 texture = ExtResource("5_fu4bq")
+
+[node name="otherguy2" type="CharacterBody2D" parent="."]
+position = Vector2(217, 335)
+slide_on_ceiling = false
+script = ExtResource("3_h0wof")
+metadata/affiliation = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="otherguy2"]
+rotation = 1.5708
+texture = ExtResource("3_27ga2")
+
+[node name="otherguy3" type="CharacterBody2D" parent="."]
+position = Vector2(648, 421)
+slide_on_ceiling = false
+script = ExtResource("3_h0wof")
+metadata/affiliation = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="otherguy3"]
+rotation = 1.5708
+texture = ExtResource("3_27ga2")
+
+[node name="swarm2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("leader")]
+position = Vector2(413, 447)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+leader = NodePath("../swarm1")
+metadata/affiliation = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm2"]
+rotation = 1.5708
+texture = ExtResource("7_pbtuc")
+
+[node name="swarm3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("leader")]
+position = Vector2(416, 450)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+leader = NodePath("../swarm1")
+metadata/affiliation = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm3"]
+rotation = 1.5708
+texture = ExtResource("7_pbtuc")
+
+[node name="swarm4" type="CharacterBody2D" parent="." node_paths=PackedStringArray("leader")]
+position = Vector2(415, 449)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+leader = NodePath("../swarm2")
+metadata/affiliation = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm4"]
+rotation = 1.5708
+texture = ExtResource("7_pbtuc")
+
+[node name="swarm5" type="CharacterBody2D" parent="." node_paths=PackedStringArray("leader")]
+position = Vector2(415, 449)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+leader = NodePath("../swarm2")
+metadata/affiliation = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm5"]
+rotation = 1.5708
+texture = ExtResource("7_pbtuc")
+
+[node name="swarm6" type="CharacterBody2D" parent="." node_paths=PackedStringArray("leader")]
+position = Vector2(415, 449)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("6_yokb4")
+leader = NodePath("../swarm3")
+metadata/affiliation = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm6"]
+rotation = 1.5708
+texture = ExtResource("7_pbtuc")
