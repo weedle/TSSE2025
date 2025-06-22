@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://viesw8m25fn3"]
+[gd_scene load_steps=6 format=3 uid="uid://viesw8m25fn3"]
 
 [ext_resource type="Script" uid="uid://brwxpxd7hyv7r" path="res://movementPlayer.gd" id="1_27ga2"]
 [ext_resource type="Texture2D" uid="uid://bpuhwme3to83m" path="res://enemyShip.png" id="1_ubfh8"]
 [ext_resource type="Texture2D" uid="uid://ch8a0ov3gnrm5" path="res://playerShip.png" id="3_27ga2"]
 [ext_resource type="Script" uid="uid://dynujn402iieh" path="res://playerComputer.gd" id="3_h0wof"]
+[ext_resource type="Texture2D" uid="uid://ciic4ofgo3ld" path="res://swarmLeader.png" id="5_fu4bq"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(50, 50)
+position = Vector2(222, 220)
 slide_on_ceiling = false
 script = ExtResource("1_27ga2")
 
@@ -17,10 +18,16 @@ rotation = 1.5708
 texture = ExtResource("1_ubfh8")
 
 [node name="otherguy" type="CharacterBody2D" parent="."]
-position = Vector2(300, 50)
+position = Vector2(472, 220)
 slide_on_ceiling = false
 script = ExtResource("3_h0wof")
 
 [node name="Sprite2D" type="Sprite2D" parent="otherguy"]
 rotation = 1.5708
 texture = ExtResource("3_27ga2")
+
+[node name="swarm1" type="CharacterBody2D" parent="."]
+position = Vector2(444, 424)
+
+[node name="Sprite2D" type="Sprite2D" parent="swarm1"]
+texture = ExtResource("5_fu4bq")
