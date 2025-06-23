@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var rotation_speed = 1.5
 #@export var controller: Script
+@export var Flame: PackedScene
 
 var rotation_direction = 0
 var movement_direction = 0
@@ -10,6 +11,11 @@ var movement_direction = 0
 func get_input():
 	rotation_direction = Input.get_axis("dir_Left", "dir_Right")
 	movement_direction = Input.get_axis("dir_Down", "dir_Up")
+	if Input.is_action_pressed("fire"):
+		for i in range(3):
+			var b = Flame.instantiate()
+			b.transform = $Muzzle.global_transform
+			owner.add_child(b)
 	
 
 
